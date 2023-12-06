@@ -3,47 +3,56 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Movies;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Throwable;
+use DB;
 
 class MovieController extends Controller
 {
 
-    // public function fetchAPI(){
-    //   $response = HTTP::withHeaders(
-    //   [
-    //     'X-RapidAPI-Key' =>'5d4dbabe7dmsh27fd7aef75bd01ep114e86jsn8beff30d443e',
-    //     'X-RapidAPI-Host' => 'imdb8.p.rapidapi.com'
-    //   ])->get('https://imdb8.p.rapidapi.com/title/v2/get-popular-movies-by-genre', [
-    //     'genre' => 'adventure',
-    //     'limit' =>'2']
-    //   );
+    public function cart(){
+      $movie = new Movies();
+      $movies = $movie->getMovies();
 
-    //   $res = json_decode($response->body());
-    //   $resultCount = count($res);
-    //   $titleArray = array();
+      return view('cart', compact('movies'));
+    }
 
-    //   for($i = 0; $i < $resultCount; $i++){
-    //     $titleArray[] = substr($res[$i], 7);
-    //   }
 
-    //   $response2 = HTTP::withHeaders([
-    //     'X-RapidAPI-Key' => '5d4dbabe7dmsh27fd7aef75bd01ep114e86jsn8beff30d443e',
-    //     'X-RapidAPI-Host'=> 'imdb8.p.rapidapi.com'
-    //   ])->get('https://imdb8.p.rapidapi.com/title/get-details', 
-    //   [
-    //     'tconst' => 'tt13287846/'
-    //   ]);
+    public function cartPost(Request $request){
+      $movie = new Movies();
+      $movie->movieName = $request->movieName;
+      $movie->price  = $request->price;
 
-    //   $res2 = json_decode($response2, true);
-    //   foreach($res2 as $results){
-    //     print($results);
-    //   }
-    // }
+      $movie->save();
 
+      return redirect('/cart');
+    }
+
+    public function getInTouch(){
+        return back()->with('successful', 'Thank you! We received your inquiries and concerns');
+    }
+    public function getInTouchGuest(){
+      return back()->with('successful', 'Thank you! We received your inquiries and concerns');
+    }
+
+    public function delete($id){
+
+      $data = Movies::find($id);
+      $data->delete();
+      
+      return redirect('/cart');
+    }
+
+    public function cartSubmit(){
+      DB::table('movies')->truncate();
+
+      return redirect('/cart')->with('success', 'Thank you for ordering!');
+    }
 
 
     public function login(){
@@ -57,7 +66,7 @@ class MovieController extends Controller
         ];
 
         if(Auth::attempt($credentials)){
-            return redirect('/home')->with('success', 'Login Success!');
+            return redirect('home')->with('success', 'Login Success!');
         }
         return back()->with('error', 'Invalid Email or Password');
     }
@@ -81,6 +90,7 @@ class MovieController extends Controller
         return back()->with('error', 'Email has been used');
       }
     }
+
 
     public function logout(){
       Auth::logout();

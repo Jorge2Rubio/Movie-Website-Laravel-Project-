@@ -1,9 +1,9 @@
 @extends('layout')
 @section('title', 'Movie Website')
 @section('nav')
-<nav class="navbar navbar-expand-lg bg-dark text-white">
-    <div class="container-fluid">
-      <a class="navbar-brand px-5 text-white" href="{{'/'}}">@ TenFlix</a>
+<nav class="navbar navbar-expand-lg text-white" style="background-color: #3d051b !important;">
+  <div class="container-fluid">
+      <a class="navbar-brand px-5 text-white" href="{{'/'}}"><img src="/images/1.png" style="width: 7rem !important; height: 1.5rem !important;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,8 +22,8 @@
 @endsection
 
 @section('content')
-<div class="container-fluid bg-dark-subtle" style="height: 300px !important;">
-    <div class="d-flex flex-column mb-3">
+<div class="container-fluid bg-dark-subtle" style="height: 300px !important; background-image: url('/images/coverphoto.png') !important; object-fit:cover; opacity: 0.8;">
+    <div class="d-flex flex-column mb-3" style="color: white;">
       <div class="d-flex justify-content-center pt-5">
         <h1>Premier Movie Hub</h1>
       </div>
@@ -45,154 +45,154 @@
       </div>
     </div>
   </div>
-  <div class="container text-center">
+  <div class="container text-center pb-5  ">
     <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
       <div class="col">
-        <div class="p-3">
+        <div class="p-2">
           <div class="card">
-            <img src="..." class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p>2023 . 144 minutes</p>
-              <p>P300.00</p>
+            <img src="images/barbie.jpg" class="card-img-top" style="width: 100%; height: 25rem; object-fit:cover">
+            <div class="card-body p-0 m-0">
+              <h5 class="card-title">Barbie (2023)</h5>
+              <p>2023 · 1h 54m</p>
+              <p>₱300.00</p>
             </div>
-            <div class="card-body">
-              <a href="#" class="card-link" style="text-decoration: none; color: black;">Add to Cart</a>
+            <div class="card-body pt-0">
+              <a href="{{route('login')}}" class="card-link" style="text-decoration: none; color: black;"><b>Add to Cart</b></a>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="p-3">
+        <div class="p-2">
           <div class="card">
-            <img src="..." class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p>2023 . 144 minutes</p>
-              <p>P300.00</p>
+            <img src="images/mario.jpg" class="card-img-top" style="width: 100%; height: 25rem; object-fit:cover">
+            <div class="card-body p-0 m-0">
+              <h5 class="card-title">Mario (2023)</h5>
+              <p>2023 · 1h 32m</p>
+              <p>₱300.00</p>
             </div>
-            <div class="card-body">
-              <a href="#" class="card-link" style="text-decoration: none; color: black;">Add to Cart</a>
+            <div class="card-body pt-0">
+              <a href="{{route('login')}}" class="card-link" style="text-decoration: none; color: black;"><b>Add to Cart</b></a>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="p-3">
+        <div class="p-2">
           <div class="card">
-            <img src="..." class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p>2023 . 144 minutes</p>
-              <p>P300.00</p>
+            <img src="images/Oppenheimer.jpg" class="card-img-top" style="width: 100%; height: 25rem; object-fit:cover">
+            <div class="card-body p-0 m-0">
+              <h5 class="card-title">Oppenheimer (2023)</h5>
+              <p>2023 · 3h</p>
+              <p>₱300.00</p>
             </div>
-            <div class="card-body">
-              <a href="#" class="card-link" style="text-decoration: none; color: black;">Add to Cart</a>
+            <div class="card-body pt-0">
+              <a href="{{route('login')}}" class="card-link" style="text-decoration: none; color: black;"><b>Add to Cart</b></a>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="p-3">
+        <div class="p-2">
           <div class="card">
-            <img src="..." class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p>2023 . 144 minutes</p>
-              <p>P300.00</p>
+            <img src="images/FastX.jpg" class="card-img-top" style="width: 100%; height: 25rem; object-fit:cover">
+            <div class="card-body p-0 m-0">
+              <h5 class="card-title">Fast X (2023)</h5>
+              <p>2023 · 2h 21m</p>
+              <p>₱300.00</p>
             </div>
-            <div class="card-body">
-              <a href="#" class="card-link" style="text-decoration: none; color: black;">Add to Cart</a>
+            <div class="card-body pt-0">
+              <a href="{{route('login')}}" class="card-link" style="text-decoration: none; color: black;"><b>Add to Cart</b></a>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="p-3">
+        <div class="p-2">
           <div class="card">
-            <img src="..." class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p>2023 . 144 minutes</p>
-              <p>P300.00</p>
+            <img src="images/spiderman.jpg" class="card-img-top" style="width: 100%; height: 25rem; object-fit:cover">
+            <div class="card-body p-0 m-0">
+              <h5 class="card-title">Spiderman (2023)</h5>
+              <p>2023 · 2h 20m</p>
+              <p>₱300.00</p>
             </div>
-            <div class="card-body">
-              <a href="#" class="card-link" style="text-decoration: none; color: black;">Add to Cart</a>
+            <div class="card-body pt-0">
+              <a href="{{route('login')}}" class="card-link" style="text-decoration: none; color: black;"><b>Add to Cart</b></a>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="p-3">
+        <div class="p-2">
           <div class="card">
-            <img src="..." class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p>2023 . 144 minutes</p>
-              <p>P300.00</p>
+            <img src="images/Guardians_of_the_Galaxy_Vol._3_poster.jpg" class="card-img-top" style="width: 100%; height: 25rem; object-fit:cover">
+            <div class="card-body p-0 m-0">
+              <h5 class="card-title">Guardians of the Galaxy Vol. 3 (2023)</h5>
+              <p>2023 · 2h 30m</p>
+              <p>₱300.00</p>
             </div>
-            <div class="card-body">
-              <a href="#" class="card-link" style="text-decoration: none; color: black;">Add to Cart</a>
+            <div class="card-body pt-0">
+              <a href="{{route('login')}}" class="card-link" style="text-decoration: none; color: black;"><b>Add to Cart</b></a>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="p-3">
+        <div class="p-2">
           <div class="card">
-            <img src="..." class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p>2023 . 144 minutes</p>
-              <p>P300.00</p>
+            <img src="images/littlemermaid.jpg" class="card-img-top" style="width: 100%; height: 26.5rem; object-fit:cover">
+            <div class="card-body p-0 m-0">
+              <h5 class="card-title">Little Mermaid (2023)</h5>
+              <p>2023 · 1h 38m</p>
+              <p>₱300.00</p>
             </div>
-            <div class="card-body">
-              <a href="#" class="card-link" style="text-decoration: none; color: black;">Add to Cart</a>
+            <div class="card-body pt-0">
+              <a href="{{route('login')}}" class="card-link" style="text-decoration: none; color: black;"><b>Add to Cart</b></a>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="p-3">
+        <div class="p-2">
           <div class="card">
-            <img src="..." class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p>2023 . 144 minutes</p>
-              <p>P300.00</p>
+            <img src="images/missionimpossible.jpg" class="card-img-top" style="width: 100%; height: 25rem; object-fit:cover">
+            <div class="card-body p-0 m-0">
+              <h5 class="card-title">Mission: Impossible(2023)</h5>
+              <p>2023 · 2h 43m</p>
+              <p>₱300.00</p>
             </div>
-            <div class="card-body">
-              <a href="#" class="card-link" style="text-decoration: none; color: black;">Add to Cart</a>
+            <div class="card-body pt-0">
+              <a href="{{route('login')}}" class="card-link" style="text-decoration: none; color: black;"><b>Add to Cart</b></a>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="p-3">
+        <div class="p-2">
           <div class="card">
-            <img src="..." class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p>2023 . 144 minutes</p>
-              <p>P300.00</p>
+            <img src="images/Elemental.jpg" class="card-img-top" style="width: 100%; height: 26.5rem; object-fit:cover">
+            <div class="card-body p-0 m-0">
+              <h5 class="card-title">Elemental (2023)</h5>
+              <p>2023 · 1h 41m</p>
+              <p>₱300.00</p>
             </div>
-            <div class="card-body">
-              <a href="#" class="card-link" style="text-decoration: none; color: black;">Add to Cart</a>
+            <div class="card-body pt-0">
+              <a href="{{route('login')}}" class="card-link" style="text-decoration: none; color: black;"><b>Add to Cart</b></a>
             </div>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="p-3">
+        <div class="p-2">
           <div class="card">
-            <img src="..." class="card-img-top">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p>2023 . 144 minutes</p>
-              <p>P300.00</p>
+            <img src="images/AntMan.jpg" class="card-img-top" style="width: 100%; height: 25rem; object-fit:cover">
+            <div class="card-body p-0 m-0">
+              <h5 class="card-title">Ant-Man and the Wasps (2023)</h5>
+              <p>2023 · 2h 4m</p>
+              <p>₱300.00</p>
             </div>
-            <div class="card-body">
-              <a href="#" class="card-link" style="text-decoration: none; color: black;">Add to Cart</a>
+            <div class="card-body pt-0">
+              <a href="{{route('login')}}" class="card-link" style="text-decoration: none; color: black;"><b>Add to Cart</b></a>
             </div>
           </div>
         </div>
@@ -200,7 +200,13 @@
     </div>
   </div>
 
-  <div class="container-fluid bg-dark text-white" style="padding-top: 2rem !important;">
+  <div class="container-fluid text-white" style="padding-top: 2rem !important; background-color: #3d051b !important;" >
+    @if(Session::has('successful'))
+
+    <div class="alert alert-warning alert-dismissible fade show d-flex justify-content-center" role="alert">
+      <strong>{{Session::get('successful')}}.</strong>
+    </div>
+    @endif
     <div class="d-flex flex-column mx-4">
         <div class="d-flex justify-content-center pt-4">
             <h1>Get In Touch</h1>
@@ -211,9 +217,10 @@
     </div>
   </div>
 
-  <div class="container-fluid d-flex justify-content-center bg-dark">
+  <div class="container-fluid d-flex justify-content-center text-white" style="background-color: #3d051b !important;">
 
-    <form action="" method="POST">
+    <form action="{{url('/')}}" method="POST">
+        @csrf
         <div class="row">
           <div class="col">
             <input type="text" class="form-control" placeholder="Email Address">
@@ -235,13 +242,13 @@
               <div class="col"></div>
               <div class="col"></div>
               <div class="col">
-                <button class="btn btn-primary" type="button" style="background-color: white !important; color: black;">Submit</button>
+                <button class="btn btn-primary" type="submit" style="background-color: white !important; color: black;">Submit</button>
               </div>
             </div>
       </form>
   </div>
 
-<div class="container-fluid mt-5" style="padding-top: 5rem !important;">
+<div class="container-fluid mt-5" style="padding-top: 5rem !important;" >
     <div class="d-flex justify-content-center">
         <p>Technological Institute of the Philippines Manila</p>
     </div>

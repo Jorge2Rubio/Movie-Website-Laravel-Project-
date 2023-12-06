@@ -1,9 +1,9 @@
 @extends('layout')
 @section('title', 'Sign in')
 @section('nav')
-<nav class="navbar navbar-expand-lg bg-dark text-white">
-    <div class="container-fluid">
-      <a class="navbar-brand px-5 text-white" href="{{'/'}}">@ TenFlix</a>
+<nav class="navbar navbar-expand-lg text-white" style="background-color: #3d051b !important;">
+  <div class="container-fluid">
+      <a class="navbar-brand px-5 text-white" href="{{'/'}}"><img src="/images/1.png" style="width: 7rem !important; height: 1.5rem !important;"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,8 +22,8 @@
 
   <div class="container-fluid">
     <div class="d-flex justify-content-center pt-2 m-2 p-2">
-      <div class="d-flex justify-content-center flex-column align-items-center" style="padding-top: 5% !important; background-color: #3d051b !important; color: white; width: 25% !important; height: 500px !important;">
-        <img src="...">
+      <div class="d-flex justify-content-center flex-column align-items-center" style="padding-top: 1% !important; background-color: #3d051b !important; color: white; width: 25% !important; height: 500px !important;">
+        <img src="/images/1.png" style="width: 10rem !important; height: 3rem !important;">
         <br>
         <h5>Welcome to TenFlix!</h5>
         <p>Your Premier Destination</p>

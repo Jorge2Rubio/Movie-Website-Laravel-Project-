@@ -24,6 +24,10 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function getUsers(){
+        return $this->all();
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
