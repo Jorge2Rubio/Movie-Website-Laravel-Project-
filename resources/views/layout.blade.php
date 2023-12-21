@@ -13,6 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+<script>
+</script>
 <body>
 @yield('nav')
 @yield('content')
@@ -20,7 +22,6 @@
 <script>
     var total = document.getElementById('total_price').value;
     var finalPrice = document.getElementById('finalPrice').innerHTML += total;
-    
 </script>
 </body>
 </html>

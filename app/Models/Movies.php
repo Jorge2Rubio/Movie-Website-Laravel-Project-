@@ -12,6 +12,7 @@ class Movies extends Model
     protected $fillable = [
         'movieName',
         'price',
+        'Order_No',
     ];
 
     public function getMovies(){

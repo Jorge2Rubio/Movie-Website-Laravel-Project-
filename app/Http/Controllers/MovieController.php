@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Movies;
+use App\Models\Orders;
 use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Http;
 use Throwable;
 use DB;
@@ -48,10 +50,31 @@ class MovieController extends Controller
       return redirect('/cart');
     }
 
-    public function cartSubmit(){
+    public function cartSubmit(Request $request){
+      try {
+
+      $moviesSize = DB::table('movies')->count('id');
+      
+      for($i = 0; $i < $moviesSize; $i++){
+        $order = new Orders();
+
+        $order->order_amount = $request->order_amount;
+        $order->user_id = $request->user_id;
+        $order->movies_id = $request->movies_id[$i];
+        $order->movie_name = $request->movies_name[$i];
+        $order->save();
+      };
+      
+      Schema::disableForeignKeyConstraints();
+
       DB::table('movies')->truncate();
 
+      Schema::enableForeignKeyConstraints();
+      
       return redirect('/cart')->with('success', 'Thank you for ordering!');
+      }catch(Throwable $e){
+        return redirect('/cart')->with('error', 'No item in cart!');
+      }
     }
 
 

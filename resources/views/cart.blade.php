@@ -33,6 +33,13 @@
   <strong>{{Session::get('success')}}</strong>
 </div>
 @endif
+
+@if(Session::has('error'))
+
+<div class="alert alert-danger alert-dismissible fade show d-flex justify-content-center" role="alert">
+  <strong>{{Session::get('error')}}</strong>
+</div>
+@endif
 <h5 style="margin: 2rem;">My Cart</h5>
   <div class="container-fluid d-flex justify-content-between" style="width: 70% !important;">
     <table class="table ">
@@ -62,8 +69,14 @@
       @endforeach
       <h5 class="mt-2"id="finalPrice">Total: </h5>
       <hr>
-      <form action="{{route('cartSubmit')}}" method="POST">
+      <form action="{{route('cartSubmit')}}" method="POST" id="cartSubmitForm">
         @csrf
+        <input type="text" value="{{Auth::user()->id}}" name="user_id" hidden>
+        @foreach ($movies as $movie)
+        <input type="text" value="{{$movie->id}}" name="movies_id[]"  hidden>
+        <input type="text" value="{{$movie->movieName}}" name="movies_name[]"  hidden>
+        <input type="text" value="{{App\Models\Movies::sum('price')}}" id="total_price" name="order_amount" hidden>
+        @endforeach
         <button class="btn btn-primary" id="cartBtn" style="width: 100% !important; background-color: white !important; color: black;">Checkout</button>
       </form>
     </div>
